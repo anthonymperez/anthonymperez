@@ -2,10 +2,10 @@
 // @include 'menu';
 
 $primary-color: #444;
-$secondary-color: #eece1a;
+$secondary-color: #c0f;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
-$background-opacity: 0.5;
+$background-opacity: 0.75;
 
 @mixin easeOut {
   transition: all 0.25s ease-out;

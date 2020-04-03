@@ -24,11 +24,11 @@ function toggleMenu() {
 
     showMenu = true;
   } else {
-    menuBtn.classList.add('show');
-    menu.classList.add('close');
-    menuNav.classList.add('close');
-    menuBranding.classList.add('close');
-    navItems.forEach(item => item.classList.add('close'));
+    menuBtn.classList.remove('close');
+    menu.classList.remove('show');
+    menuNav.classList.remove('show');
+    menuBranding.classList.remove('show');
+    navItems.forEach(item => item.classList.remove('show'));
 
     // Set Menu State
 
