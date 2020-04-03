@@ -18,21 +18,28 @@
   main{
     padding: 4rem;
     width: auto;
-    text-align: left;
-
-    &#home{
-      overflow: hidden;
-      h1{
-        margin-top: 20vh;
-      }
-    }
   }
 
   .menu{
+    &-nav, &-branding{
+      float: left;
+      width: 50%;
+      height: 100vh;
+    }
+
+    &-nav{
+      justify-content: center;
+      transform: translate3d(0, -100%, 0);
+    }
+
     &-branding{
+      transform: translate3d(0, 100%, 0);
+      
       .portrait{
         width: 15rem;
         height: 15rem;
+        background: url('../img/portrait.jpeg');
+        background-size: cover;
       }
     }
 
@@ -46,6 +53,19 @@
   h1, h2, h3{
     &.lg-heading{
       font-size: 6rem;
+    }
+  }
+
+  main{
+    // text-align: left;
+  }
+
+  .menu{
+
+    &-branding{
+
+      .portrait{
+      }
     }
   }
 }
