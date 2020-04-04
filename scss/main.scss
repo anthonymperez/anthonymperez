@@ -50,7 +50,6 @@ header{
 
 main{
   min-height: calc(100vh - 3.75rem);
-  margin: auto;
   text-align: center;
 
   .icons{
@@ -75,6 +74,23 @@ main{
 
   &#about{
     overflow: hidden;
+    h1{
+      margin-top: 15vh;
+    }
+  }
+
+  &#work{
+    overflow: hidden;
+    margin: 0 3.625rem;
+
+    h1{
+      margin-top: 15vh;
+    }
+  }
+
+  &#contact{
+    overflow: hidden;
+
     h1{
       margin-top: 15vh;
     }
@@ -121,7 +137,79 @@ main{
   }
 }
 
+// Work / Projects
+.projects{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.25rem;
+
+  img{
+    width: 100%;
+    border: 0.125rem #ccc solid;
+
+    &:hover{
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact Page
+
+.boxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div{
+    font-size: 1rem;
+    border: 0.125rem #ccc solid;
+    padding: 1rem 1rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover{
+      padding: 0.5rem 0.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      
+      span{
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+// Button Style
+
+.btn{
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover{
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark{
+  @extend .btn;
+  background: darken($color: $primary-color, $amount: 50);
+  color: set-text-color(darken($color: $primary-color, $amount: 50));
+}
+.btn-light{
+  @extend .btn;
+  background: lighten($color: $primary-color, $amount: 50);
+  color: set-text-color(lighten($color: $primary-color, $amount: 50));
+}
+
 #main-footer{
+  font-size: 0.75rem;
+  line-height: 0.5;
   text-align: center;
   padding: .0625rem;
   background: darken($color: $primary-color, $amount: 10);
