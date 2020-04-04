@@ -9,7 +9,7 @@
     width: 1.5rem;
     height: 0.125rem;
     margin: 0 0 .25rem 0;
-    background: white;
+    background: #ccc;
     transition: all 0.25s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -40,7 +40,7 @@
   .menu-nav {
     margin: 0;
     justify-content: start;
-    height: 70vh;
+    height: 60vh;
     background: #262626;
     list-style: none;
     transform: translate3d(-100%, 0, 0);
@@ -48,7 +48,7 @@
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    height: 30vh;
+    height: 40vh;
     background: #333;
     transform: translate3d(100%, 0, 0);
     transition: all 0.25s ease-out; }
@@ -75,7 +75,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: white;
+    color: #ccc;
     text-decoration: none;
     transition: all 0.25s ease-out; }
     .menu .nav-link:hover {
@@ -98,7 +98,7 @@
 
 body {
   background: #333;
-  color: white;
+  color: #ccc;
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -117,7 +117,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(51, 51, 51, 0.7); }
+      background: rgba(51, 51, 51, 0.6); }
 
 h1, h2, h3 {
   margin: 0;
@@ -131,7 +131,7 @@ h1, h2, h3 {
     background: rgba(56, 56, 56, 0.5); }
 
 a {
-  color: white;
+  color: #ccc;
   text-decoration: none; }
 
 header {
@@ -143,9 +143,8 @@ header {
   color: #c0f; }
 
 main {
-  width: 92.5%;
+  min-height: calc(100vh - 3.75rem);
   margin: auto;
-  height: 100%;
   text-align: center; }
   main .icons {
     margin-top: 1rem; }
@@ -158,10 +157,49 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 15vh; }
+  main#about {
+    overflow: hidden; }
+    main#about h1 {
+      margin-top: 15vh; }
+
+.about-info {
+  display: grid;
+  grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+  grid-gap: 1.875rem;
+  grid-template-columns: 1fr;
+  margin: 0 3.5rem; }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: solid 0.125rem #c0f;
+    width: 50%; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    font-size: 0.75rem;
+    background: #404040;
+    padding: 0.5rem;
+    border-bottom: #c0f 0.25rem solid; }
+
+#main-footer {
+  text-align: center;
+  padding: .0625rem;
+  background: #1a1a1a;
+  color: #ccc;
+  height: 3.75rem; }
 
 @media screen and (min-width: 720px) {
   h1, h2, h3 {
-    margin: 0; }
+    margin: 0;
+    text-align: left; }
     h1.lg-heading, h2.lg-heading, h3.lg-heading {
       font-size: 4.5rem; }
     h1.sm-heading, h2.sm-heading, h3.sm-heading {
@@ -170,7 +208,8 @@ main {
       padding: 0.2rem 1rem; }
   main {
     padding: 4rem;
-    width: auto; }
+    width: 100%;
+    text-align: left; }
   .menu-nav, .menu-branding {
     float: left;
     width: 50%;
@@ -186,8 +225,30 @@ main {
       background: url("../img/portrait.jpeg");
       background-size: cover; }
   .menu .nav-link {
-    font-size: 1.875rem; } }
+    font-size: 1.875rem; }
+  .about-info {
+    text-align: left;
+    grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr); }
+    .about-info .bio-image {
+      width: 100%; }
+    .about-info .bio {
+      grid-area: bio;
+      font-size: 1rem;
+      margin: 0; }
+    .about-info .job-1 {
+      grid-area: job1; }
+    .about-info .job-2 {
+      grid-area: job2; }
+    .about-info .job-3 {
+      grid-area: job3; }
+    .about-info .job {
+      background: #404040;
+      padding: 0.5rem;
+      border-bottom: #c0f 0.25rem solid; } }
 
 @media screen and (min-width: 1080px) {
   h1.lg-heading, h2.lg-heading, h3.lg-heading {
-    font-size: 6rem; } }
+    font-size: 6rem; }
+  .about-info .bio {
+    font-size: 1.5rem; } }

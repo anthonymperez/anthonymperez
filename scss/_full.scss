@@ -3,6 +3,7 @@
 
   h1, h2, h3{
     margin: 0;
+    text-align: left;
 
     &.lg-heading{
       font-size: 4.5rem;
@@ -17,7 +18,8 @@
 
   main{
     padding: 4rem;
-    width: auto;
+    width: 100%;
+    text-align: left;
   }
 
   .menu{
@@ -47,6 +49,37 @@
       font-size: 1.875rem;
     }
   }
+
+  .about-info{
+    text-align: left;
+    grid-template-areas: 
+    'bioimage bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image{
+      width: 100%;
+    }
+    .bio{
+      grid-area: bio;
+      font-size: 1rem;
+      margin: 0;
+    }
+    .job-1{
+      grid-area: job1;
+    }
+    .job-2{
+      grid-area: job2;    
+    }
+    .job-3{
+      grid-area: job3;    
+    }
+    .job{
+      background: lighten($color: $primary-color, $amount: 5);
+      padding: 0.5rem;
+      border-bottom: $secondary-color 0.25rem solid;
+    }
+  }
 }
 
 @media screen and (min-width: 1080px){
@@ -56,16 +89,9 @@
     }
   }
 
-  main{
-    // text-align: left;
-  }
-
-  .menu{
-
-    &-branding{
-
-      .portrait{
-      }
+  .about-info{
+    .bio{
+      font-size: 1.5rem;
     }
   }
 }
