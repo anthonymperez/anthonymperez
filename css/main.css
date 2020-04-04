@@ -1,0 +1,337 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  transition: all 0.25s ease-out; }
+  .menu-btn .btn-line {
+    width: 1.5rem;
+    height: 0.125rem;
+    margin: 0 0 .25rem 0;
+    background: #ccc;
+    transition: all 0.25s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(0.25rem, 0.25rem); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(0.25rem, -0.25rem); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: none;
+    width: 100%;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    justify-content: start;
+    height: 60vh;
+    background: #262626;
+    list-style: none;
+    transform: translate3d(-100%, 0, 0);
+    transition: all 0.25s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    height: 40vh;
+    background: #333;
+    transform: translate3d(100%, 0, 0);
+    transition: all 0.25s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 8rem;
+      height: 8rem;
+      background: url("../img/portrait_small.jpeg");
+      background-size: cover;
+      border-radius: 50%;
+      border: solid 0.125rem #c0f; }
+  .menu .nav-item {
+    transform: translate3d(36rem, 0, 0);
+    transition: all 0.25s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #c0f; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.25s ease-out; }
+    .menu .nav-link:hover {
+      color: #c0f; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #333;
+  color: #ccc;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body#bg-img {
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 25%; }
+    body#bg-img:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(51, 51, 51, 0.6); }
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400; }
+  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+    font-size: 3rem; }
+  h1.sm-heading, h2.sm-heading, h3.sm-heading {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.2rem 1rem;
+    background: rgba(56, 56, 56, 0.5); }
+
+a {
+  color: #ccc;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+.txt-secondary {
+  color: #c0f; }
+
+main {
+  min-height: calc(100vh - 3.75rem);
+  text-align: center; }
+  main .icons {
+    margin-top: 1rem; }
+    main .icons a {
+      padding: 0.4rem; }
+      main .icons a:hover {
+        color: #c0f;
+        transition: all 0.25s ease-out; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 15vh; }
+  main#about {
+    overflow: hidden; }
+    main#about h1 {
+      margin-top: 15vh; }
+  main#work {
+    overflow: hidden;
+    margin: 0 3.625rem; }
+    main#work h1 {
+      margin-top: 15vh; }
+  main#contact {
+    overflow: hidden; }
+    main#contact h1 {
+      margin-top: 15vh; }
+
+.about-info {
+  display: grid;
+  grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+  grid-gap: 1.875rem;
+  grid-template-columns: 1fr;
+  margin: 0 3.5rem; }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: solid 0.125rem #c0f;
+    width: 50%; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    font-size: 0.75rem;
+    background: #404040;
+    padding: 0.5rem;
+    border-bottom: #c0f 0.25rem solid; }
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.25rem; }
+  .projects img {
+    width: 100%;
+    border: 0.125rem #ccc solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #c0f;
+      transition: all 0.25s ease-out; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 1rem;
+    border: 0.125rem #ccc solid;
+    padding: 1rem 1rem;
+    margin-bottom: 3rem;
+    transition: all 0.25s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 0.5rem;
+      background: #c0f;
+      color: #333; }
+      .boxes div:hover span {
+        color: #333; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #c0f;
+    color: #333; }
+
+.btn-dark {
+  background: black;
+  color: #ccc; }
+
+.btn-light {
+  background: #b3b3b3;
+  color: #333; }
+
+#main-footer {
+  font-size: 0.75rem;
+  line-height: 0.5;
+  text-align: center;
+  padding: .0625rem;
+  background: #1a1a1a;
+  color: #ccc;
+  height: 3.75rem; }
+
+@media screen and (min-width: 720px) {
+  h1, h2, h3 {
+    margin: 0;
+    text-align: left; }
+    h1.lg-heading, h2.lg-heading, h3.lg-heading {
+      font-size: 4.5rem; }
+    h1.sm-heading, h2.sm-heading, h3.sm-heading {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem; }
+  main {
+    padding: 4rem;
+    width: 100%;
+    text-align: left; }
+    main#work {
+      margin: 0; }
+  .menu-nav, .menu-branding {
+    float: left;
+    width: 50%;
+    height: 100vh; }
+  .menu-nav {
+    justify-content: center;
+    transform: translate3d(0, -100%, 0); }
+  .menu-branding {
+    transform: translate3d(0, 100%, 0); }
+    .menu-branding .portrait {
+      width: 15rem;
+      height: 15rem;
+      background: url("../img/portrait.jpeg");
+      background-size: cover; }
+  .menu .nav-link {
+    font-size: 1.875rem; }
+  .about-info {
+    text-align: left;
+    grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr); }
+    .about-info .bio-image {
+      width: 100%; }
+    .about-info .bio {
+      grid-area: bio;
+      font-size: 1rem;
+      margin: 0; }
+    .about-info .job-1 {
+      grid-area: job1; }
+    .about-info .job-2 {
+      grid-area: job2; }
+    .about-info .job-3 {
+      grid-area: job3; }
+    .about-info .job {
+      background: #404040;
+      padding: 0.5rem;
+      border-bottom: #c0f 0.25rem solid; }
+  .projects {
+    grid-template-areas: 'social music netflix' 'photo responsive';
+    grid-template-columns: repeat(2, 1fr); }
+    .projects img {
+      width: 100%;
+      margin: 0; }
+  .boxes div {
+    font-size: 1.5rem;
+    padding: 1.25rem 1.75rem;
+    margin-bottom: 3rem;
+    transition: all 0.25s ease-out; }
+    .boxes div:hover {
+      padding: 0.75rem 1rem; } }
+
+@media screen and (min-width: 1080px) {
+  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+    font-size: 6rem; }
+  .about-info .bio {
+    font-size: 1.5rem; }
+  .projects {
+    grid-template-areas: 'social music netflix' 'photo responsive';
+    grid-template-columns: repeat(3, 1fr); }
+  .boxes div {
+    font-size: 2rem;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3.5rem;
+    transition: all 0.25s ease-out; }
+    .boxes div:hover {
+      padding: 0.75rem 1.25rem; } }
